@@ -140,7 +140,7 @@ This approach improves:
 ---
 
 ## Project Structure
-
+```text
 8112AI/
 ├── frontend/
 │   ├── src/
@@ -192,7 +192,7 @@ This approach improves:
 │   └── run.sh
 │
 ├── README.md
-
+```
 
 ## Backend Setup
 
