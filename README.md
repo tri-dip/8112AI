@@ -4,7 +4,7 @@
 ![Frontend](https://img.shields.io/badge/Frontend-React_%7C_Tailwind-61DAFB)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-009688)
 
-## Team — Team_8112
+# Team — TEAM_8112
 
 **Members**
 
@@ -13,6 +13,7 @@
 - Mrinmoy Mazumdar  
 - Kritiman Talukdar
 
+---
 
 8112.AI is an AI-native consumer health co-pilot designed to help users make safer dietary decisions.
 The system analyzes food labels, ingredients, and nutritional data against a user’s allergies, medical conditions, and health goals, and produces a safety verdict such as SAFE, CAUTION, AVOID, or INFO.
