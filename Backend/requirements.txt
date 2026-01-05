@@ -1,0 +1,11 @@
+python-dotenv
+google-genai
+pydantic
+exa_py
+opencv-python
+easyocr
+torch==2.3.0
+torchvision==0.18.1
+numpy
+fastapi
+python-multipart
