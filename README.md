@@ -26,6 +26,11 @@ The platform integrates OCR-based label extraction, LLM-driven reasoning, and a 
 
 **[Open Website](https://ai-health-udgam-ui.vercel.app)**
 
+**[Backend](http://ec2-54-89-24-253.compute-1.amazonaws.com:8000/docs#/)**
+
+![Preview](doc.jpeg)
+
+
 
 ## Features
 
