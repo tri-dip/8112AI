@@ -1,58 +1,77 @@
-# 8112.AI - Consumer Health Decision Engine
+# 8112.AI - Frontend Client
 
-![Project Status](https://img.shields.io/badge/Status-Beta-blue)
-![Frontend](https://img.shields.io/badge/Frontend-React_%7C_Tailwind-61DAFB)
-![Backend](https://img.shields.io/badge/Backend-FastAPI-009688)
-![AI](https://img.shields.io/badge/AI-Gemini_Pro_Vision-8E75B2)
+![Status](https://img.shields.io/badge/Status-Beta-blue)
+![Framework](https://img.shields.io/badge/Framework-React_18-61DAFB)
+![Language](https://img.shields.io/badge/Language-TypeScript-3178C6)
+![Styling](https://img.shields.io/badge/Styling-Tailwind_CSS-06B6D4)
 
-8112.AI is an AI-native health co-pilot designed to help consumers make safer dietary decisions. By combining Computer Vision with Large Language Models (LLMs), the system analyzes food labels, ingredients, and nutritional facts against a user's specific health profile (allergies, conditions, and goals) to provide real-time safety verdicts.
+The **8112.AI Frontend** is a modern, responsive web interface for the Consumer Health Decision Engine. Built with React and TypeScript, it provides a fluid user experience for scanning food labels, interacting with the AI agent, and visualizing health verdicts through complex animations.
 
+## ✨ Features
 
+* **Cyberpunk/Dark Mode UI:** A sleek, immersive interface designed with Tailwind CSS and custom scrollbars.
+* **Visual Label Scanning:** Integrated file upload handling to send food packaging images to the backend.
+* **Transparent Thinking Engine:** Real-time animated status indicators (`Thinking`, `Researching`, `Analyzing`) powered by **Framer Motion**.
+* **Dynamic Verdict Badges:** Visual "Safe", "Caution", and "Avoid" result cards with icon integration.
+* **Structured Data Rendering:** parses complex JSON responses to display Ingredients and Nutrition Facts cleanly.
+* **Interactive Chat:** A complete chat interface with streaming-like updates and follow-up suggestion buttons.
 
-## Features
+## 🛠️ Tech Stack
 
-* **Real-Time Health Analysis:** Instant "Safe", "Caution", or "Avoid" verdicts based on strict user constraints.
-* **Visual Label Scanning:** Users can upload images of food packaging; the AI extracts text, reads nutrition tables, and analyzes ingredients.
-* **Dynamic User Profiling:** Context-aware responses that consider specific allergies (e.g., Peanuts), health conditions (e.g., Hypothyroidism), and fitness goals (e.g., Muscle Gain).
-* **Transparent Reasoning Engine:** A modern UI that displays the AI's "Thinking" process step-by-step before delivering the final verdict, increasing user trust.
-* **Integrated Web Research:** The agent performs live web searches to cross-reference safety data for obscure ingredients or conflicting information.
+* **Core:** [React 18](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Animations:** [Framer Motion](https://www.framer.com/motion/) (AnimatePresence, layout transitions)
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **HTTP Client:** Native Fetch API
 
-## Tech Stack
+## 🚀 Getting Started
 
-### Frontend
-* **Framework:** React (Vite ecosystem)
-* **Styling:** Tailwind CSS
-* **Animations:** Framer Motion (used for the thinking state and result reveals)
-* **Icons:** Lucide React
+### Prerequisites
 
-### Backend
-* **Framework:** FastAPI
-* **Language:** Python 3.9+
-* **Validation:** Pydantic Data Models
-* **Server:** Uvicorn
+* Node.js (v18 or higher)
+* npm or yarn
+* The **8112.AI Backend** running on port `8000` (see Backend README).
 
-### AI and LLM
-* **Model:** Google Gemini 1.5 Pro or Flash (Multimodal capabilities)
-* **Agent Logic:** Custom Agent State (Plan, Search, Reasoning, Verdict)
-* **Search Integration:** Optional integration with Tavily or Google Search API
+### Installation
 
-## Project Structure
+1.  **Clone the repository** (if you haven't already):
+    ```bash
+    git clone [https://github.com/your-username/8112-ai-frontend.git](https://github.com/your-username/8112-ai-frontend.git)
+    cd 8112-ai-frontend
+    ```
 
-```text
-8112-ai/
-├── frontend/          # React Application
-│   ├── src/
-│   │   ├── components/# UI Components (ThinkingIndicator, VerdictBadge)
-│   │   ├── App.tsx    # Main Application Logic
-│   │   └── ...
-│   ├── tailwind.config.js
-│   └── package.json
-│
-├── backend/           # FastAPI Server
-│   ├── main.py        # App entry point and API endpoints
-│   ├── agent.py       # LLM Logic, Prompt Engineering, and Chain
-│   ├── models.py      # Pydantic Data Models for Request/Response
-│   ├── requirements.txt
-│   └── .env           # Environment Variables (API Keys)
-│
-└── README.md
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+
+    *Note: Ensure the specific UI libraries are installed:*
+    ```bash
+    npm install framer-motion lucide-react clsx tailwind-merge
+    ```
+
+3.  **Configure Tailwind:**
+    Ensure your `tailwind.config.js` is set up to scan your file paths:
+    ```javascript
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [
+        require('@tailwindcss/typography'), // Optional: for prose content
+      ],
+    }
+    ```
+
+### Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
