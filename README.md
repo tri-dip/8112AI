@@ -146,6 +146,7 @@ This approach improves:
 - OpenCV
 - EXA.AI
 - Gemini models (text reasoning and parsing)
+  > **Note:** This MVP utilizes free-tier base models for cost-efficiency during the beta phase.
 - OCR-driven ingredient and nutrition extraction pipeline
 
 ---
@@ -168,41 +169,27 @@ This approach improves:
 │   └── vite.config.ts
 │
 ├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── __init__.py
-│   │   │   ├── routes_health.py
-│   │   │   └── routes_agent.py
-│   │   ├── core/
-│   │   │   ├── __init__.py
-│   │   │   ├── llm.py
-│   │   │   ├── prompts.py
-│   │   │   ├── search.py
-│   │   │   └── reasoning.py
-│   │   ├── cv/
-│   │   │   ├── __init__.py
-│   │   │   ├── cv_pipeline.py
-│   │   │   ├── image_enhancement.py
-│   │   │   └── ocr.py
-│   │   ├── models/
-│   │   │   ├── __init__.py
-│   │   │   ├── product.py
-│   │   │   └── agent_state.py
-│   │   ├── services/
-│   │   │   ├── __init__.py
-│   │   │   ├── agent_service.py
-│   │   │   └── product_parser.py
-│   │   ├── utils/
-│   │   │   ├── __init__.py
-│   │   │   ├── config.py
-│   │   │   └── logger.py
-│   │   ├── main.py
-│   │   └── __init__.py
-│   ├── tests/
-│   ├── requirements.txt
-│   └── run.sh
-│
-├── README.md
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── llm.py
+│   │   ├── loop.py
+│   │   ├── model.py
+│   │   ├── prompts.py
+│   │   └── search.py
+│   ├── cv_layer/
+│   │   ├── __init__.py
+│   │   ├── cv_extract.py
+│   │   ├── image_enhancement.py
+│   │   ├── llm_parser.py
+│   │   └── ocr.py
+│   ├── server_storage/
+│   ├── Testing/
+│   ├── .env
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── main.py
+│   ├── readme.md
+│   └── requirements.txt
 ```
 
 ## Backend Setup
