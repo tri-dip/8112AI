@@ -4,7 +4,7 @@
 ![Frontend](https://img.shields.io/badge/Frontend-React_%7C_Tailwind-61DAFB)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-009688)
 
-# Team — TEAM_8112
+## Team — TEAM_8112
 
 **Members**
 
