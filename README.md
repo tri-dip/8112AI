@@ -146,6 +146,7 @@ This approach improves:
 - OpenCV
 - EXA.AI
 - Gemini models (text reasoning and parsing)
+  > **Note:** This MVP utilizes free-tier base models for cost-efficiency during the beta phase.
 - OCR-driven ingredient and nutrition extraction pipeline
 
 ---
