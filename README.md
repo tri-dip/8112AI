@@ -140,63 +140,57 @@ This approach improves:
 ---
 
 ## Project Structure
+
 8112AI/
-├── frontend/                    
+├── frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
 │   │   ├── hooks/
-│   │   ├── lib/                 
+│   │   ├── lib/
 │   │   ├── assets/
 │   │   ├── styles/
 │   │   ├── App.tsx
 │   │   └── main.tsx
-│   ├── public/                  
+│   ├── public/
 │   ├── package.json
 │   └── vite.config.ts
 │
 ├── backend/
 │   ├── app/
-│   │   ├── api/                 
+│   │   ├── api/
 │   │   │   ├── __init__.py
 │   │   │   ├── routes_health.py
 │   │   │   └── routes_agent.py
-│   │   │
-│   │   ├── core/                 
+│   │   ├── core/
 │   │   │   ├── __init__.py
-│   │   │   ├── llm.py           
+│   │   │   ├── llm.py
 │   │   │   ├── prompts.py
 │   │   │   ├── search.py
 │   │   │   └── reasoning.py
-│   │   │
-│   │   ├── cv/                  
+│   │   ├── cv/
 │   │   │   ├── __init__.py
 │   │   │   ├── cv_pipeline.py
 │   │   │   ├── image_enhancement.py
 │   │   │   └── ocr.py
-│   │   │
-│   │   ├── models/              
+│   │   ├── models/
 │   │   │   ├── __init__.py
 │   │   │   ├── product.py
 │   │   │   └── agent_state.py
-│   │   │
-│   │   ├── services/             
+│   │   ├── services/
 │   │   │   ├── __init__.py
-│   │   │   ├── agent_service.py  
+│   │   │   ├── agent_service.py
 │   │   │   └── product_parser.py
-│   │   │
-│   │   ├── utils/               
+│   │   ├── utils/
 │   │   │   ├── __init__.py
 │   │   │   ├── config.py
 │   │   │   └── logger.py
-│   │   │
-│   │   ├── main.py               
+│   │   ├── main.py
 │   │   └── __init__.py
-│   │
 │   ├── tests/
 │   ├── requirements.txt
 │   └── run.sh
-|
+│
 ├── README.md
 
 
