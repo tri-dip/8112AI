@@ -21,6 +21,98 @@ The platform integrates OCR-based label extraction, LLM-driven reasoning, and a 
 
 ---
 
+---
+
+## System Architecture
+
+The 8112.AI system follows an agent-style processing pipeline. The user interacts through the frontend, and requests are processed by the FastAPI backend, which coordinates OCR extraction, LLM reasoning, optional web search, and verdict generation.
+
+### High-Level Pipeline
+
+    User Input
+        |
+        v
+    React Frontend (UI)
+        |
+        v
+    FastAPI Backend (Agent Controller)
+        |
+        |--- If image provided → OCR + Product Parser
+        |
+        v
+    LLM Reasoning (Gemini)
+
+        |
+        |--- If LLM has sufficient context:
+        |        • Generate reasoning
+        |        • Produce verdict (SAFE / CAUTION / AVOID / INFO)
+        |
+        |--- Else (uncertain or missing knowledge):
+        |        • Trigger Web Search (Exa.ai)
+        |        • Retrieve supporting evidence
+        |        • Synthesize search-grounded response
+        |
+        v
+    Final Decision Layer
+        |
+        v
+    Response Returned to Frontend
+        |
+        v
+    UI Displays
+        • Thinking / Plan Steps
+        • Product Data (if scanned)
+        • Research Findings (if used)
+        • Verdict + Explanation
+        • Suggested Next Steps
+
+
+### Component Roles
+
+- **Frontend (React UI)**  
+  Handles interactions, displays agent thinking, reasoning, and verdict output.
+
+- **FastAPI Backend**  
+  Acts as the control layer for agent logic and data flow.
+
+- **LLM Engine (Gemini)**  
+  Performs intent classification, reasoning synthesis, and verdict generation.
+
+- **OCR + Parsing Module (Image Inputs Only)**  
+  Extracts ingredients, nutrition values, and product context from labels.
+
+- **Web Search via Exa.ai (Fallback Mode)**  
+  Activated when:
+  - the query involves unfamiliar substances,
+  - safety concerns require evidence,
+  - or condition-specific validation is needed.
+
+  The retrieved information is fed back into the LLM for grounded reasoning.
+
+- **Decision & Output Layer**  
+  Produces:
+  - verdict,
+  - reasoning summary,
+  - actionable follow-up suggestions.
+
+---
+
+## Architecture Summary
+
+The design follows a **“Reason → Retrieve → Refine” AI-agent pattern**:
+
+1. **Reason first** using prior knowledge  
+2. **Retrieve evidence only when needed** via Exa.ai  
+3. **Refine final verdict** using grounded information
+
+This approach improves:
+- safety,
+- transparency,
+- reliability,
+- and interpretability of decisions.
+ 
+---
+
 ## Tech Stack
 
 ### Frontend
@@ -34,7 +126,9 @@ The platform integrates OCR-based label extraction, LLM-driven reasoning, and a 
 - Pydantic
 - Uvicorn
 
-### AI / CV
+### Reasoning and Action Pipelines
+- OpenCV
+- EXA.AI
 - Gemini models (text reasoning and parsing)
 - OCR-driven ingredient and nutrition extraction pipeline
 
@@ -62,7 +156,7 @@ The platform integrates OCR-based label extraction, LLM-driven reasoning, and a 
 
 ### Prerequisites
 
-- Python 3.9 or higher
+- Python 3.10 or higher
 - Google Gemini API key
 
 ### Installation
@@ -94,7 +188,7 @@ The backend runs at:
 
 The frontend runs at:
 
-    http://localhost:5173
+    http://localhost:3000
 
 ---
 
