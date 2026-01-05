@@ -11,6 +11,11 @@ The platform integrates OCR-based label extraction, LLM-driven reasoning, and a 
 
 ---
 
+### Live Site
+
+**[Open Website](https://ai-health-udgam-ui.vercel.app)**
+
+
 ## Features
 
 - Real-time safety verdicts based on user profiles
@@ -135,22 +140,65 @@ This approach improves:
 ---
 
 ## Project Structure
+8112AI/
+├── frontend/                    
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── lib/                 
+│   │   ├── assets/
+│   │   ├── styles/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── public/                  
+│   ├── package.json
+│   └── vite.config.ts
+│
+├── backend/
+│   ├── app/
+│   │   ├── api/                 
+│   │   │   ├── __init__.py
+│   │   │   ├── routes_health.py
+│   │   │   └── routes_agent.py
+│   │   │
+│   │   ├── core/                 
+│   │   │   ├── __init__.py
+│   │   │   ├── llm.py           
+│   │   │   ├── prompts.py
+│   │   │   ├── search.py
+│   │   │   └── reasoning.py
+│   │   │
+│   │   ├── cv/                  
+│   │   │   ├── __init__.py
+│   │   │   ├── cv_pipeline.py
+│   │   │   ├── image_enhancement.py
+│   │   │   └── ocr.py
+│   │   │
+│   │   ├── models/              
+│   │   │   ├── __init__.py
+│   │   │   ├── product.py
+│   │   │   └── agent_state.py
+│   │   │
+│   │   ├── services/             
+│   │   │   ├── __init__.py
+│   │   │   ├── agent_service.py  
+│   │   │   └── product_parser.py
+│   │   │
+│   │   ├── utils/               
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   └── logger.py
+│   │   │
+│   │   ├── main.py               
+│   │   └── __init__.py
+│   │
+│   ├── tests/
+│   ├── requirements.txt
+│   └── run.sh
+|
+├── README.md
 
-    8112-ai/
-    ├── frontend/              # React UI
-    │   └── src/
-    │
-    └── backend/
-        ├── main.py            # API routes
-        ├── agent.py           # Plan → Search → Reason → Verdict loop
-        ├── models.py          # Pydantic schemas
-        ├── llm.py             # Gemini wrapper
-        ├── prompts.py         # Agent prompts
-        ├── cv_pipeline.py     # OCR and label parsing
-        ├── requirements.txt
-        └── .env
-
----
 
 ## Backend Setup
 
